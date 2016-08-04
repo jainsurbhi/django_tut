@@ -12,7 +12,7 @@ class QuestionModelAdmin(admin.ModelAdmin):
 
 
 class ChoiceModelAdmin(admin.ModelAdmin):
-    list_display = ('question', 'votes')
+    list_display = ('question', 'choice_text', 'votes')
 
     class Meta:
         model = Choice
