@@ -1,12 +1,14 @@
 <html>
 
+{%load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
 <body>
 
-    {% if object_list %}
+    {% if latest_question_list %}
         <ul>
-	    {% for obj in object_list %}
+	    {% for question in latest_question_list %}
 
-         	<li><a href="{% url 'polls:detail' obj.id %}">{{ obj.question_text }}</a></li>
+         	<li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
 	    {% endfor %}
 
 	    </ul>
